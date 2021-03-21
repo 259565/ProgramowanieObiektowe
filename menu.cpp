@@ -28,24 +28,12 @@ if(wybor == 1) {
     if (a > 0)
     delete[] tab1.tab;
 
-/*if else(wybor == 2) {
-    int w, k;
-    cout << "Podaj liczbe wierszy arkusza: " << endl;
-        cin >> w;
-    cout << "Podaj liczbe kolumn arkusza: " << endl;
-        cin >> k;
-    nowy_rozmiar(x,y);
-} */
+if else(wybor == 2) 
+    void wyswietl_tablice(tab1);
 
-/*if else(wybor == 3) {
-cout << "Zawartosc arkusza" << endl;
-    wyswietl_arkusz();
-} */
 
-/*if else(wybor == 4) {
-cout << "Wrocimy do tego";
 
-}*/
+delete[] tab1.tab;
 
 }
 
