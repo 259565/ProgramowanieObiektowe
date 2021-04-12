@@ -2,15 +2,35 @@
 #include "tablica.h"
 using namespace std;
 
-tablica stworz_tablice(int x, int y)
+
+double** stworz_tablice(int w, int k){
+double** tab = new double *[w];
+
+for(int i = 0; i < k; i++)
 {
-tablica tab1;
-tab1.x = x;
-tab1.y = y;
-tab1.tab = new int *[x];
+    tab[i] = new double[k];
+}
 
-    for(int i = 0; i < x; i++) 
-        tab1.tab[i] = new int [y];
+return tab;
+}
 
-return tab1;
+
+void wpisz_wartosci(double** tab, int w, int k){
+    for (int i = 0; i < w; i++)
+    { 
+        for (int j = 0; j < k; j++, cout <<" ")
+        {
+        cout << "Podaj element " << i + 1 << " " << j + 1 << " tablicy" << endl;
+        cin >> tab[i][j];
+        }
+    }
+}
+
+void usuwanie_tablicy(double** tab, int w){
+for ( int i = 0; i < w; i++)
+{
+ delete [] tab[i];
+}
+
+delete [] tab;
 }

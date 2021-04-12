@@ -1,9 +1,11 @@
 #include <iostream>
-#include "menu.cpp" 
+#include "menu.h"
 using namespace std;
+
 
 int main(){
 
-menu();
+    menu();
 
+    return 0;
 }

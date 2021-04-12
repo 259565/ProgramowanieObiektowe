@@ -1,15 +1,12 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-/** \brief Funkcja wprowadzajaca do pliku dane z arkusza, funkcja w sobie zawierac powinna otwarcie i zamkniecie wskazanego pliku
- * @param[in] nazwa - wskazany przez uzytkownika plik, na ktorym przeprowadzane beda operacje
- * @param[in] tab - argument pozwalajacy przeniesc dane do pliku, przenoszac zawartosc arkusza
- */
-void wpisz_arkusz_do_pliku()(string nazwa, tablica tab1);
-
-/** \brief Funkcja wprowadzajaca do arkusza dane z pliku, funkcja w sobie zawierac powinna otwarcie i zamkniecie wskazanego pliku
- * @param[in] nazwa - wskazany przez uzytkownika plik, na ktorym przeprowadzane beda operacje
- * @param[in] tab - argument pozwalajacy przeniesc dane do pliku
- * @param[out] tablica - zwracana wartosc, pozwala otrzymac tablice z wprowadzonymi danymi z pliku
- */
-tablica wpisz_plik_do_arkusza(string nazwa, tablica tab1);
+/*!
+* \brief Funkcja przenosi wartosci zapisane w arkuszu do zewnetrznego pliku tekstowego, a gdy ten nie istnieje, rowniez go tworzy
+*
+*\param[in] tab to argument, ktory pozwala nam przy pomocy wskaznika przeniesc do funkcji tablice 2W (arkusz)
+*\param[in] w to argument odpowiadajacy liczbie wierszy arkuszaz
+*\param[in] k to argument odpowiadajacy liczbie kolumn arkusza
+*/
+void arkusz_do_pliku(double** tab, int w, int k);
