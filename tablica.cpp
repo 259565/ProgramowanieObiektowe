@@ -6,7 +6,7 @@ using namespace std;
 double** stworz_tablice(int w, int k){
 double** tab = new double *[w];
 
-for(int i = 0; i < k; i++)
+for(int i = 0; i < w; i++)
 {
     tab[i] = new double[k];
 }
