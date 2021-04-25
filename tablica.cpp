@@ -3,34 +3,42 @@
 using namespace std;
 
 
-double** stworz_tablice(int w, int k){
-double** tab = new double *[w];
-
-for(int i = 0; i < w; i++)
+struct abc
 {
-    tab[i] = new double[k];
+    int w;
+    int k;
+    double** wsk;
+};
+
+double** stworz_tablice(abc arkusz){
+double** tab = new double *[arkusz.w];
+
+for(int i = 0; i < arkusz.w; i++)
+{
+    tab[i] = new double[arkusz.k];
 }
 
 return tab;
 }
 
 
-void wpisz_wartosci(double** tab, int w, int k){
-    for (int i = 0; i < w; i++)
+void wpisz_wartosci(abc arkusz){
+    for (int i = 0; i < arkusz.w; i++)
     { 
-        for (int j = 0; j < k; j++, cout <<" ")
+        for (int j = 0; j < arkusz.k; j++, cout <<" ")
         {
         cout << "Podaj element " << i + 1 << " " << j + 1 << " tablicy" << endl;
-        cin >> tab[i][j];
+        cin >> arkusz.wsk[i][j];
         }
     }
 }
 
-void usuwanie_tablicy(double** tab, int w){
-for ( int i = 0; i < w; i++)
-{
- delete [] tab[i];
-}
+void usuwanie_tablicy(abc arkusz){
+    for ( int i = 0; i < arkusz.w; i++)
+    {
+        delete [] arkusz.wsk[i];
+    }
 
-delete [] tab;
+delete [] arkusz.wsk;
+arkusz.wsk = NULL;
 }

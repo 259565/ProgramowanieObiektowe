@@ -2,27 +2,23 @@
 using namespace std;
 
 /*!
-* \brief Funkcja tworzy tablice 2W (arkusz) o zadanych parametrach oraz przekazuje ja dalej do programu.
+* \brief Funkcja tworzy tablice 2W (arkusz) o zadanych parametrach oraz przekazuje ja dalej do programowi.
 *
-*\param[in] w to argument odpowiadajacy liczbie wierszy arkusza
-*\param[in] k to argument odpowiadajacy liczbie kolumn arkusza
-*\param[out] double** zwracany wskaznik pozwala w dalszej czesci programu manipulowac wartosciami arkusza
+*\param[in, out] abc to struktura, ktora przechowuje dane o arkuszu (wskaznik do tablicy, liczbe wierszy i kolumn)
+*\return zwracany jest wskaznik do arkusza, aby moc bazowac na otrzymanej tablicy w kolejnym pliku .cpp
 */
-double** stworz_tablice(int w, int k);
+double** stworz_tablice(struct abc);
 
 /*!
 * \brief Funkcja pozwala na wpisanie do arkusza wartosci
 *
-*\param[in] tab to argument, ktory pozwala nam przy pomocy wskaznika odniesc sie do uprzednio stworzonej tablicy
-*\param[in] w to argument odpowiadajacy liczbie wierszy arkusza, jest przenoszony automatycznie przy wywolaniu tej funkcji
-*\param[in] k to argument odpowiadajacy liczbie kolumn arkusza, jest przenoszony automatycznie przy wywolaniu tej funkcji
+*\param[in, out] abc to struktura, ktora przechowuje dane o arkuszu (wskaznik do tablicy, liczbe wierszy i kolumn)
 */
-void wpisz_wartosci(double** tab, int w, int k);
+void wpisz_wartosci(struct abc);
 
 /*!
 * \brief Funkcja usuwa zalokowana pamiec na stworzenie arkusza
 *
-*\param[in] tab to argument, ktory pozwala nam przy pomocy wskaznika odniesc sie do stworzonego arkusza
-*\param[in] w to argument odpowiadajacy liczbie wierszy arkusza
+*\param[in, out] abc to struktura, ktora przechowuje dane o arkuszu (wskaznik do tablicy, liczbe wierszy i kolumn)
 */
-void usuwanie_tablicy(double** tab, int w);
+void usuwanie_tablicy(struct abc);

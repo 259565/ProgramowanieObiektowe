@@ -4,20 +4,27 @@
 #include "tablica.h"
 using namespace std;
 
-void arkusz_do_pliku(double** tab, int w, int k, string nazwa_pliku)
+struct abc
+{
+    int w;
+    int k;
+    double** wsk;
+};
+
+void arkusz_do_pliku(abc arkusz, string nazwa_pliku)
 {
     fstream plik;
     plik.open(nazwa_pliku, ios::out);
         if (plik.good() == true)
         {
             cout << "Poprawny zapis do pliku" << endl;
-            plik << w << " " << k << endl;
+            plik << arkusz.w << " " << arkusz.k << endl;
 
-            for (int i = 0; i < w; i++, plik << endl)
+            for (int i = 0; i < arkusz.w; i++, plik << endl)
             {
-                for (int j = 0; j < k; j++, plik << " ")
+                for (int j = 0; j < arkusz.k; j++, plik << " ")
                 {
-                    plik << tab[i][j];
+                    plik << arkusz.wsk[i][j];
                 }
             }
             plik.close();
