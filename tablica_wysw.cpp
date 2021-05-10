@@ -1,22 +1,15 @@
 #include <iostream>
-#include "tablica_wysw.h"
+#include "class.h"
 using namespace std;
 
-struct abc
-{
-    int w;
-    int k;
-    double** wsk;
-};
 
-
-void wyswietl_tablice(abc arkusz){
+void Arkusz::wyswietl_tablice(Arkusz sheet){
     cout << "Twoj arkusz to: " << endl;
-        for (int i = 0; i < arkusz.w; i++, cout << endl)
+        for (int i = 0; i < sheet.w; i++, cout << endl)
     {
-        for (int j = 0; j < arkusz.k; j++, cout << " ")
+        for (int j = 0; j < sheet.k; j++, cout << " ")
         {
-        cout << arkusz.wsk[i][j];
+            cout << sheet.wsk[i][j];
         }
     }
 

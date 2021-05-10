@@ -1,44 +1,37 @@
 #include <iostream>
-#include "tablica.h"
+#include "class.h"
 using namespace std;
 
 
-struct abc
-{
-    int w;
-    int k;
-    double** wsk;
-};
+double** Arkusz::stworz_tablice(Arkusz sheet){
+double** tab = new double *[sheet.w];
 
-double** stworz_tablice(abc arkusz){
-double** tab = new double *[arkusz.w];
-
-for(int i = 0; i < arkusz.w; i++)
+for(int i = 0; i < sheet.w; i++)
 {
-    tab[i] = new double[arkusz.k];
+    tab[i] = new double[sheet.k];
 }
 
 return tab;
 }
 
 
-void wpisz_wartosci(abc arkusz){
-    for (int i = 0; i < arkusz.w; i++)
+void Arkusz::wpisz_wartosci(Arkusz sheet){
+    for (int i = 0; i < sheet.w; i++)
     { 
-        for (int j = 0; j < arkusz.k; j++, cout <<" ")
+        for (int j = 0; j < sheet.k; j++, cout <<" ")
         {
-        cout << "Podaj element " << i + 1 << " " << j + 1 << " tablicy" << endl;
-        cin >> arkusz.wsk[i][j];
+            cout << "Podaj element " << i + 1 << " " << j + 1 << " tablicy" << endl;
+            cin >> sheet.wsk[i][j];
         }
     }
 }
 
-void usuwanie_tablicy(abc arkusz){
-    for ( int i = 0; i < arkusz.w; i++)
+void Arkusz::usuwanie_tablicy(Arkusz sheet){
+    for ( int i = 0; i < sheet.w; i++)
     {
-        delete [] arkusz.wsk[i];
+        delete [] sheet.wsk[i];
     }
 
-delete [] arkusz.wsk;
-arkusz.wsk = NULL;
+delete [] sheet.wsk;
+sheet.wsk = NULL;
 }
